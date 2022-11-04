@@ -1,0 +1,80 @@
+#mainTable td {
+    border: 3px solid #fa6400;
+}
+
+#mainTable {
+    border-collapse: collapse;
+    margin: 10px auto 3px;
+    background-color: #fff;
+}
+
+body {
+    background-color: #fa6400;
+}
+
+.mainHeader {
+    color: #fff;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+}
+
+.gameImage {
+    width: 182px;
+    min-height: 130px;
+    object-fit: cover;
+}
+
+.UserInput {
+    text-align: center;
+    font-size: 8pt;
+    min-height: 30px;
+    color: #000000;
+}
+
+.mainTable {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+.header,
+.bottom {
+    overflow: hidden;
+}
+
+#after_begin {
+    visibility: hidden;
+}
+
+#score,
+#timer {
+    width: 200px;
+    height: inherit;
+    display: inline-block;
+    text-align: center;
+    font-size: 35px;
+    color: #fff;
+}
+
+.btn {
+    font-size: 16px;
+    padding: 10px;
+    float: right;
+    cursor: pointer;
+    color: #fa6400;
+    text-decoration: none;
+    background: #fff;
+    border: 3px solid #f08665;
+    transition: all 0.4s ease 0s;
+}
+
+.btn:hover {
+    color: #ffffff;
+    background: #fa6400;
+    border-color: #ffffff;
+    transition: all 0.4s ease 0s;
+}
