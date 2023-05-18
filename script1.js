@@ -1,31 +1,36 @@
 const startingminutes = 5;
 let time = startingminutes * 60;
+let timerInterval;
 
 const timerEl = document.getElementById('timer');
 const submit = document.getElementById('after_begin');
 const begin = document.getElementById('begin');
 
 begin.addEventListener('click', function() {
-    setInterval(start, 1000);
+    timerInterval = setInterval(start, 1000);
     start();
     begin.disabled = true;
     submit.style.visibility = "visible";
+});
 
+submit.addEventListener('click', function() {
+    clearInterval(timerInterval); // Stop the timer interval
+    checkAnswers();
 });
 
 function start() {
-
     const minutes = Math.floor(time / 60);
     let seconds = time % 60;
 
-    //to make it so it appears like 3:02 for example since when the seconds are < 10 they get kinda weird
     seconds = seconds < 10 ? '0' + seconds : seconds;
-
 
     timerEl.innerHTML = `${minutes}:${seconds}`;
     time--;
-    time = time < 0 ? 0 : time;
-    //to make not display negative values
+    if (time < 0) {
+        clearInterval(timerInterval); // Stop the timer when time reaches 0
+        time = 0;
+        checkAnswers();
+    }
 }
 
 let score = document.querySelector("#score");
@@ -44,56 +49,46 @@ function checkAnswers() {
     var correct = 0;
     if (answer1.value.toLowerCase() == "uncharted 4") {
         correct++;
-    } else {
-        correct = correct;
     }
     if (answer2.value.toLowerCase() == "outlast") {
         correct++;
-    } else {
-        correct = correct;
     }
     if (answer3.value.toLowerCase() == "doom") {
         correct++;
-    } else {
-        correct = correct;
     }
     if (answer4.value.toLowerCase() == "monster hunter") {
         correct++;
-    } else {
-        correct = correct;
     }
     if (answer5.value.toLowerCase() == "valorant") {
         correct++;
-    } else {
-        correct = correct;
     }
     if (answer6.value.toLowerCase() == "not for broadcast") {
         correct++;
-    } else {
-        correct = correct;
     }
     if (answer7.value.toLowerCase() == "dead by daylight") {
         correct++;
-    } else {
-        correct = correct;
     }
     if (answer8.value.toLowerCase() == "dark souls 3") {
         correct++;
-    } else {
-        correct = correct;
     }
     if (answer9.value.toLowerCase() == "the witcher 3") {
         correct++;
-    } else {
-        correct = correct;
     }
     if (answer10.value.toLowerCase() == "sea of thieves") {
         correct++;
-    } else {
-        correct = correct;
     }
 
+    score.innerHTML = correct + "/10";
 
-    score.innerHTML = "";
-    score.innerHTML = correct + "/11";
+    // Reveal the correct answers
+    answer1.value = "Uncharted 4";
+    answer2.value = "Outlast";
+    answer3.value = "Doom";
+    answer4.value = "Monster Hunter";
+    answer5.value = "Valorant";
+    answer6.value = "Not for Broadcast";
+    answer7.value = "Dead by Daylight";
+    answer8.value = "Dark Souls 3";
+    answer9.value = "The Witcher 3";
+    answer10.value = "Sea of Thieves";
 }
