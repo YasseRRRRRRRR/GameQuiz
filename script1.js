@@ -22,6 +22,7 @@ function start() {
     const minutes = Math.floor(time / 60);
     let seconds = time % 60;
 
+    //to make it so it appears like 3:02 for example since when the seconds are < 10 they get kinda weird
     seconds = seconds < 10 ? '0' + seconds : seconds;
 
     timerEl.innerHTML = `${minutes}:${seconds}`;
