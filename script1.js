@@ -34,62 +34,44 @@ function start() {
     }
 }
 
-let score = document.querySelector("#score");
-var answer1 = document.querySelector("#answer1");
-var answer2 = document.querySelector("#answer2");
-var answer3 = document.querySelector("#answer3");
-var answer4 = document.querySelector("#answer4");
-var answer5 = document.querySelector("#answer5");
-var answer6 = document.querySelector("#answer6");
-var answer7 = document.querySelector("#answer7");
-var answer8 = document.querySelector("#answer8");
-var answer9 = document.querySelector("#answer9");
-var answer10 = document.querySelector("#answer10");
+var score = document.querySelector("#score");
+var answers = [
+  "uncharted 4",
+  "outlast",
+  "doom",
+  "monster hunter",
+  "valorant",
+  "not for broadcast",
+  "dead by daylight",
+  "dark souls 3",
+  "the witcher 3",
+  "sea of thieves"
+];
+var answerInputs = [
+  document.querySelector("#answer1"),
+  document.querySelector("#answer2"),
+  document.querySelector("#answer3"),
+  document.querySelector("#answer4"),
+  document.querySelector("#answer5"),
+  document.querySelector("#answer6"),
+  document.querySelector("#answer7"),
+  document.querySelector("#answer8"),
+  document.querySelector("#answer9"),
+  document.querySelector("#answer10")
+];
 
 function checkAnswers() {
-    var correct = 0;
-    if (answer1.value.toLowerCase() == "uncharted 4") {
-        correct++;
+  var correct = 0;
+  for (var i = 0; i < answers.length; i++) {
+    if (answerInputs[i].value.toLowerCase() == answers[i]) {
+      correct++;
     }
-    if (answer2.value.toLowerCase() == "outlast") {
-        correct++;
-    }
-    if (answer3.value.toLowerCase() == "doom") {
-        correct++;
-    }
-    if (answer4.value.toLowerCase() == "monster hunter") {
-        correct++;
-    }
-    if (answer5.value.toLowerCase() == "valorant") {
-        correct++;
-    }
-    if (answer6.value.toLowerCase() == "not for broadcast") {
-        correct++;
-    }
-    if (answer7.value.toLowerCase() == "dead by daylight") {
-        correct++;
-    }
-    if (answer8.value.toLowerCase() == "dark souls 3") {
-        correct++;
-    }
-    if (answer9.value.toLowerCase() == "the witcher 3") {
-        correct++;
-    }
-    if (answer10.value.toLowerCase() == "sea of thieves") {
-        correct++;
-    }
+  }
 
-    score.innerHTML = correct + "/10";
+  score.innerHTML = correct + "/10";
 
-    // Reveal the correct answers
-    answer1.value = "Uncharted 4";
-    answer2.value = "Outlast";
-    answer3.value = "Doom";
-    answer4.value = "Monster Hunter";
-    answer5.value = "Valorant";
-    answer6.value = "Not for Broadcast";
-    answer7.value = "Dead by Daylight";
-    answer8.value = "Dark Souls 3";
-    answer9.value = "The Witcher 3";
-    answer10.value = "Sea of Thieves";
+  // Reveal the correct answers
+  for (var i = 0; i < answerInputs.length; i++) {
+    answerInputs[i].value = answers[i];
+  }
 }
