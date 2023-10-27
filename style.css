@@ -71,6 +71,7 @@ body {
     background: #fff;
     border: 3px solid #f08665;
     transition: all 0.4s ease 0s;
+    margin: auto;
 }
 
 .btn:hover {
