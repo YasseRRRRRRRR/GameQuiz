@@ -44,6 +44,7 @@ body {
 .header,
 .bottom {
     overflow: hidden;
+    display: flex;
 }
 
 #after_begin {
@@ -63,8 +64,8 @@ body {
 .btn {
     font-size: 16px;
     padding: 10px;
-    float: right;
     cursor: pointer;
+    margin: auto;
     color: #fa6400;
     text-decoration: none;
     background: #fff;
