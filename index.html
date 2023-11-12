@@ -5,33 +5,121 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style-login.css">
+    <link rel="stylesheet" href="style.css">
     <title>quiz</title>
+
 </head>
 
 <body>
-    <div class="wrapper">
-        <form action="">
-            <h1>Login</h1>
-            <div class="input-box">
-                <input type="text" placeholder="Username" required>
-            </div>
-            <div class="input-box">
-                <input type="password" placeholder="Password" required>
-            </div>
-            <div class="remember-forgot">
-                <label><input type="checkbox">remember me</label>
-                <a href="#">Forgot password?</a>
-            </div>
-            <div class="input-box">
-                <button type="submit" class="btn"> submit </button>
+    <div class="mainHeader">
+        <p id="info">This is a simple game quiz (2 are freebies because i couldn't find the right pictures ;) )
+            <br>press begin to start the timer
+        </p>
+        <button id="begin" class="btn">begin</button>
+        <div class="header">
+            <div id="timer">
+                <p></p>
             </div>
 
-            <div class="register-link">
-                <p>In case you have no account <a href="#">Create one</a></p>
-            </div>
-        </form>
+        </div>
     </div>
+
+    <table id="mainTable">
+        <tr>
+            <td valign="top">
+                <div class="gameImage">
+                    <img src="./images/uncharted4.jpg"
+                        style="width: 100%;">
+                </div>
+                <div class='UserInput'> <input id='answer1'>
+                </div>
+            </td>
+            <td valign="top">
+                <div class="gameImage">
+                    <img src="./images/outlast_3.jpg" style="width: 100%;">
+                </div>
+                <div class='UserInput'><input type="text" id='answer2'>
+                </div>
+            </td>
+            <td valign="top">
+                <div class="gameImage">
+                    <img src="./images/doom_eternal.jpeg"
+                        style="width: 100%;">
+                </div>
+                <div class='UserInput'><input type="text" id='answer3'>
+                </div>
+            </td>
+            <td valign="top">
+                <div class="gameImage">
+                    <img src="./images/moster_hunter.jpg"
+                        style="width: 100%;">
+                </div>
+                <div class='UserInput'><input type="text" id='answer4'>
+                </div>
+            </td>
+            <td valign="top">
+                <div class="gameImage">
+                    <img src="./images/valorant.jpg"
+                        style="width: 100%;">
+                </div>
+                <div class='UserInput'><input type="text" id='answer5'>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <div class="gameImage">
+                    <img src="./images/not_for_broadcast.jpg" style="width: 100%;">
+                </div>
+                <div class='UserInput'><input type="text" id='answer6'>
+                </div>
+            </td>
+            <td valign="top">
+                <div class="gameImage">
+                    <img src="./images/dbd.jpg"
+                        style="width: 100%;">
+                </div>
+                <div class='UserInput'><input type="text" id='answer7'>
+                </div>
+            </td>
+            <td valign="top">
+                <div class="gameImage">
+                    <img src="./images/dark_souls3.jpg"
+                        style="width: 100%;">
+                </div>
+                <div class='UserInput'><input type="text" id='answer8'>
+                </div>
+            </td>
+            <td valign="top">
+                <div class="gameImage">
+                    <img src="./images/the_witcher_3.jpg"
+                        style="width: 100%;">
+                </div>
+                <div class='UserInput'><input type="text" id='answer9'>
+                </div>
+            </td>
+            <td valign="top">
+                <div class="gameImage">
+                    <img src="./images/sea_of_thieves.jpg" style="width: 100%;">
+                </div>
+                <div class='UserInput'><input type="text" id='answer10'>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+    <div class="bottom">
+        <button type="submit" class="btn" id="after_begin" onclick="redirectToScorePage()"> submit </button>
+
+
+    </div>
+    <div>
+        <h2 id="score"></h2>
+    </div>
+
+
+    </div>
+    <script src="script1.js"></script>
 </body>
 
 </html>
