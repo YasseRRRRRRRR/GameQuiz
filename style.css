@@ -1,30 +1,186 @@
-/*need to change the color theory*/
 
-#mainTable td {
-    border: 3px solid #fa6400;
+
+:root {
+    --orange: #fa6400;
+    --dark_orange: #773407;
+    --light_blue: #7BCAFF;
+    --blue: #2196F3;
 }
 
-#mainTable {
-    border-collapse: collapse;
-    margin: 10px auto 3px;
-    background-color: #fff;
+a {
+    text-decoration: none;
 }
 
 body {
-    background-color: #fa6400;
-}
-
-.mainHeader {
-    color: #fff;
-    text-align: center;
+    background-color: var(--orange);
+    margin: 0;
+    padding: 0;
     font-family: 'Times New Roman', Times, serif;
-    font-size: x-large;
 }
 
-.gameImage {
-    width: 182px;
-    min-height: 130px;
+nav {
+    /* width: 100%;
+    position: fixed; */
+    top: 0;
+    left: 0;
+    background-color: var(--orange);
+    z-index: 99;
+}
+
+.first_header {
+    margin: 0 5rem 0 5rem;
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border-bottom: solid 3px black; */
+
+}
+
+.logo {
+    height: 94px;
+    width: 94px;
+    background-color: var(--light_blue);
+    border-radius: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.logo a {
+    height: 89px;
+    width:  89px;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    border-radius: 27%;
+    align-items: center;
+    font-weight: bolder;
+    color: var(--orange);
+    
+    transition: 0.3s;
+}
+
+.logo a:hover {
+    background-color:var(--blue);
+    color: white;
+}
+
+nav .checkbox {
+    display: none;
+}
+
+nav input {
+    display: none;
+}
+
+nav .checkbox i {
+    font-size: 2rem;
+    color: var(--blue);
+    cursor: pointer;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    transition: left 0.3s;
+}
+
+ul li a {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border: solid 3px transparent;
+    color: var(--dark_orange);
+    background-color: var(--light_blue);
+    transition: 0.4s ease-out;
+}
+
+ul li a:hover {
+    border: solid 3px black;
+    background-color: var(--blue);
+    color: var(--dark_orange);
+}
+
+.main_header {
+    color: #fff;
+    display: flex;
+    font-size: x-large;
+    margin-bottom:5%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.more, .inner_timer{
+    display: flex;
+    min-width: 2000px; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 3px black;
+    background-color: var(--blue);
+    
+}
+
+.main_header p, .btn {
+    text-align: center;
+}
+
+.main_header p span {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.timer_display, .score_container {
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+    max-height: 80px;
+    /* margin: 0 80px 10% 80px; */
+    font-size: 70px;  
+    color: #fff;
+    margin-bottom: 5% ;
+}
+
+.inner_timer {
+    max-height: 80px;
+}
+
+
+.main_grid {
+    display: grid;
+    margin: 5% 10% 0% 10%;
+    grid-template-columns: auto auto auto auto auto;
+    border: solid 3px#000000;
+    background-color: var(--light_blue);
+    padding: 5px; 
+    justify-content: center;
+}
+
+.grid_item {
+    background-color: var(--light_blue);
+    border: 1px solid var(--orange);
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.grid_item img {
+    width: 100%;
+    /* max-width: 400px;
+    max-height: 400px; */
+    height: 100%;
+    width: 100%;
+    /* Set a maximum width for the gameImage container */
+    height: 300px;
     object-fit: cover;
+    border: 3px solid #fa6400;
 }
 
 .UserInput {
@@ -34,51 +190,52 @@ body {
     color: #000000;
 }
 
-.mainTable {
-    display: table;
-    border-collapse: separate;
-    box-sizing: border-box;
-    text-indent: initial;
-    border-spacing: 2px;
-    border-color: grey;
-}
-
-.header,
 .bottom {
     overflow: hidden;
     display: flex;
-}
-
-#after_begin {
-    visibility: hidden;
-}
-
-#score,
-#timer {
-    width: 200px;
-    height: inherit;
-    display: inline-block;
-    text-align: center;
-    font-size: 35px;
-    color: #fff;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .btn {
     font-size: 16px;
     padding: 10px;
+    margin-bottom: 3% ;
     cursor: pointer;
-    margin: auto;
     color: #fa6400;
     text-decoration: none;
     background: #fff;
     border: 3px solid #f08665;
     transition: all 0.4s ease 0s;
-    margin: auto;
 }
 
 .btn:hover {
     color: #ffffff;
     background: #fa6400;
     border-color: #ffffff;
-    transition: all 0.4s ease 0s;
 }
+
+@media (width < 750px) {
+    ul {
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 85px);
+        left: -100%;
+        top: 85px;
+        background-color: #ffe3e3;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    nav #check:checked~ul {
+        left: 0;
+    }
+
+    ul li a {
+        font-size: 1.25rem;
+    }
+
+    nav .checkbox {
+        display: block;
+    }
